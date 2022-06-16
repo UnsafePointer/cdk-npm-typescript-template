@@ -1,13 +1,13 @@
-import { Stack, StackProps, Duration } from 'aws-cdk-lib';
-import { Construct } from 'constructs';
-import * as sqs from 'aws-cdk-lib/aws-sqs';
+import { Stack, StackProps, Duration } from "aws-cdk-lib";
+import { Construct } from "constructs";
+import * as sqs from "aws-cdk-lib/aws-sqs";
 
 export class TemplateStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
-    const queue = new sqs.Queue(this, 'TemplateQueue', {
-      visibilityTimeout: Duration.seconds(300)
+    const queue = new sqs.Queue(this, "TemplateQueue", {
+      visibilityTimeout: Duration.seconds(300),
     });
   }
 }
